@@ -106,11 +106,41 @@
     color: #FFD700;
   }
 
+  /* 見出しの「LINE」だけ LINE グリーンの箱にして、LINEで完結することを一目で伝える */
+  /* 折り返し位置の調整（途中で切れてほしくない語句） */
+  .nb { white-space: nowrap; }
+  .cover-title span.nb { color: inherit; }
+
+  .cover-title span.line-mark {
+    display: inline-block;
+    background: #06C755;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0 12px;
+    margin-right: 4px;
+    font-size: 0.82em;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+
   .cover-desc {
     font-size: 16px;
     opacity: 0.9;
     line-height: 1.8;
     margin-bottom: 40px;
+  }
+
+  .cover-add {
+    display: inline-block;
+    margin-top: 8px;
+    background: rgba(6,199,85,0.25);
+    border: 1px solid rgba(6,199,85,0.8);
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.6;
   }
 
   .cover-tags {
@@ -674,6 +704,7 @@
     .cover-label { font-size: 11px; padding: 4px 14px; margin-bottom: 18px; }
     .cover-desc { font-size: 13px; margin-bottom: 22px; line-height: 1.65; }
     .cover-tag { font-size: 11px; padding: 4px 10px; }
+    .cover-add { font-size: 13px; padding: 8px 14px; }
     .slide-title { font-size: 19px; margin-bottom: 6px; }
     .slide-subtitle { font-size: 12.5px; margin-bottom: 18px; line-height: 1.55; }
     .slide-header { padding: 10px 16px; font-size: 11px; }
@@ -784,10 +815,11 @@
   <div class="slide-cover">
     <div class="cover-label">サロン・教室オーナー様向けご案内</div>
     <div class="cover-title">
-      予約・リマインド・リピート配信を<br><span>買い切り・あとは月額0円</span>でまるごと自動化
+      <span class="line-mark">LINE</span>で予約・リマインド・<span class="nb">リピート配信を</span><br><span>買い切り・あとは月額0円</span>でまるごと自動化
     </div>
     <div class="cover-desc">
       お客様はLINEを開くだけ。予約も、お知らせも、クーポンも全部自動。<br>
+      <span class="cover-add">🔁 今お使いの公式LINEに、そのまま上乗せ。<br><span class="nb">友だちも履歴もそのまま。</span><span class="nb">乗り換え（移行）は不要です。</span></span><br>
       <span style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,215,0,0.6);border-radius:8px;padding:10px 22px;display:inline-block;margin-top:8px;font-size:18px;font-weight:800;color:#FFD700;letter-spacing:0.03em;line-height:1.6;">🏛️ 補助金を使って、賢く買い切り。<br>あとは、ずーっと0円。</span>
     </div>
     <div class="cover-tags">
@@ -1344,13 +1376,13 @@
     <div class="plan-grid">
       <div class="plan-card featured">
         <div class="plan-head">
-          <div class="plan-tag">★ 個人・1人サロンに</div>
+          <div class="plan-tag">★ 個人〜スタッフ4名のサロンに</div>
           <div class="plan-name">ベーシック</div>
         </div>
         <div class="plan-body">
           <div class="plan-row"><span class="label">買い切り価格</span><span class="value plan-price">200,000円</span></div>
           <div class="plan-row"><span class="label">維持費（月額）</span><span class="value" style="color:var(--brown);font-weight:700;">0円</span></div>
-          <div class="plan-row"><span class="label">スタッフ数</span><span class="value">2名まで</span></div>
+          <div class="plan-row"><span class="label">スタッフ数</span><span class="value">4名まで</span></div>
           <div class="plan-row"><span class="label">設定できる配信</span><span class="value">最大7種まで</span></div>
           <div class="plan-row"><span class="label">AI自動返答</span><span class="value">なし</span></div>
           <div class="plan-row"><span class="label">補助金・助成金</span><span class="value" style="color:var(--brown);">活用で実質4〜7万円程度</span></div>
@@ -1358,12 +1390,13 @@
       </div>
       <div class="plan-card">
         <div class="plan-head">
+          <div class="plan-tag">スタッフ5名以上のサロンに</div>
           <div class="plan-name">プロ</div>
         </div>
         <div class="plan-body">
           <div class="plan-row"><span class="label">買い切り価格</span><span class="value plan-price">500,000円</span></div>
           <div class="plan-row"><span class="label">維持費(月額)</span><span class="value" style="color:var(--brown);font-weight:700;">0円</span></div>
-          <div class="plan-row"><span class="label">スタッフ数</span><span class="value">5名まで</span></div>
+          <div class="plan-row"><span class="label">スタッフ数</span><span class="value">5名以上</span></div>
           <div class="plan-row"><span class="label">設定できる配信</span><span class="value">最大10種まで</span></div>
           <div class="plan-row"><span class="label">AI自動返答</span><span class="value">ご相談（別途お見積り）</span></div>
           <div class="plan-row"><span class="label">補助金・助成金</span><span class="value" style="color:var(--brown);">活用で格安導入可能</span></div>
@@ -1464,11 +1497,12 @@
       <div class="fit-box">
         <div class="fit-head good">✅ 向いているお店</div>
         <ul class="fit-list">
-          <li><span>🐾</span>個人〜スタッフ5名以下のサロン・教室・治療院</li>
+          <li><span>🐾</span>個人〜複数スタッフのサロン・教室・治療院</li>
           <li><span>📱</span>LINEで予約〜リマインドを完結させたい</li>
           <li><span>🔁</span>リピート客のフォロー・クーポン配信を自動化したい</li>
           <li><span>💰</span>補助金を活用して初期費用を抑えたい</li>
           <li><span>📊</span>顧客データを自分のお店で持ちたい</li>
+          <li><span>➕</span>今の公式LINEに、予約と配信を足したい（移行不要）</li>
         </ul>
       </div>
       <div class="fit-box">
@@ -1477,7 +1511,6 @@
           <li><span>⚠️</span>すでにL社のツールを使いこなしている</li>
           <li><span>⚠️</span>ホットペッパービューティーを継続利用する</li>
           <li><span>⚠️</span>複雑な行動分岐シナリオが主軸のビジネス</li>
-          <li><span>⚠️</span>月200通を超える大規模一斉配信が必要</li>
         </ul>
       </div>
     </div>
